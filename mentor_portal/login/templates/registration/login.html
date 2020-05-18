@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block body %}
+<h1>Please log in below.</h1>
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    </br></br>
+    {{ form.password.label_tag }}
+    {{ form.password }}
+
+    {{ form.errors }}
+    </br></br>
+    <input type="submit" value="Login">
+    
+    <!-- Email box -->
+    <!-- <label for="Email">Email</label><br> -->
+    <!-- <input type="text" id="email" name="email"><br></br> -->
+    <!-- Password box -->
+    <!-- <label for="password">Password</label><br> -->
+    <!-- <input type="password" id="password" name="password"></br></br> -->
+    <!-- Sign-in buttom -->
+    <!-- <input type="submit" value="Sign in"></form> -->
+</form>
+{% endblock %}

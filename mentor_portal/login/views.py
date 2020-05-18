@@ -1,8 +1,10 @@
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 # from .forms import ListForm
 # from .models import Mentor
-from django.contrib import messages
+# from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -13,14 +15,6 @@ def testing(request):
 
 def signup(request):
     return render(request, "signup.html")
-    # if request.method == 'POST':
-    #     form = ListForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         messages.success(request, ('You have been signed up!  You may now log in.'))
-    #         return render(request, 'login.html')
-    # else:
-    #     return render(request, "signup.html")
 
-def login(request):
-    return render(request, "login.html")
+def profile(request):
+    return render(request, "myprofile.html")
