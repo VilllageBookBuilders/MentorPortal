@@ -2,14 +2,9 @@
 
 {% block title %}Profile Page{% endblock %}
 
-{% block content %}
-
-TEST
-<title>Profile Page</title>
+{% block body %}
 
 {{ form.username }}, you have been successfully logged in.
-
-
 
 (Displays profile info that user entered when they signed up, with option to add or edit)
 
@@ -20,5 +15,8 @@ Age
 Gender
 Time Zone
 Available Times to Mentor
+
+</br></br>
+<a href="{% url 'logout' %}">Log out</a>
 
 {% endblock %}
