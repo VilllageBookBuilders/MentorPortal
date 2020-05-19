@@ -1,4 +1,13 @@
-{{ name }}, you have been successfully logged in.
+{% extends 'base.html' %}
+
+{% block title %}Profile Page{% endblock %}
+
+{% block content %}
+
+TEST
+<title>Profile Page</title>
+
+{{ form.username }}, you have been successfully logged in.
 
 
 
@@ -11,3 +20,5 @@ Age
 Gender
 Time Zone
 Available Times to Mentor
+
+{% endblock %}
