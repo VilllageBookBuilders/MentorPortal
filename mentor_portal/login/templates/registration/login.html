@@ -13,8 +13,11 @@
     {{ form.password.label_tag }}
     {{ form.password }}
 
-    {{ form.errors }}
+    {% if form.errors %}
+        <p style="color:red;">Error.  Please enter an existing username and password.</p>
+    {% endif %}
     </br></br>
+    
     <input type="submit" value="Login">
 </form>
 {% endblock %}
