@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import BaseRouter from './routes';
 import 'antd/dist/antd.css';
@@ -9,9 +9,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <CustomLayout>
-          <BaseRouter />
-        </CustomLayout>
+        <div>
+          <CustomLayout>
+            <BaseRouter />
+          </CustomLayout>
+        </div>
       </Router>
 
     </div>
