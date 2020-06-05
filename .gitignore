@@ -1,0 +1,18 @@
+# backend/src/articles/__pycache__/__init__.cpython-38.pyc
+
+# python cache files
+__pycache__
+*.pyc
+backend/src/articles/__pycache__/__init__.cpython-38.pyc
+backend/src/articles/__pycache__/admin.cpython-38.pyc
+backend/src/articles/__pycache__/models.cpython-38.pyc
+backend/src/articles/api/__pycache__/__init__.cpython-38.pyc
+backend/src/articles/api/__pycache__/serializers.cpython-38.pyc
+backend/src/articles/api/__pycache__/urls.cpython-38.pyc
+backend/src/articles/api/__pycache__/views.cpython-38.pyc
+backend/src/articles/migrations/__pycache__/__init__.cpython-38.pyc
+backend/src/articles/migrations/__pycache__/0001_initial.cpython-38.pyc
+backend/src/mentorportal/__pycache__/__init__.cpython-38.pyc
+backend/src/mentorportal/__pycache__/settings.cpython-38.pyc
+backend/src/mentorportal/__pycache__/urls.cpython-38.pyc
+backend/src/mentorportal/__pycache__/wsgi.cpython-38.pyc
