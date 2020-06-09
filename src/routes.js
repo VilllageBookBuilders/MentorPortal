@@ -7,6 +7,7 @@ import Login from './containers/Login';
 import Signup from './containers/Signup';
 import Profile from './pages/Profile'
 import Booking from './pages/Test'
+import CalendarDemo from "./pages/Booking/BookingComponent.js"
 
 const BaseRouter = () => (
     <div>
@@ -16,6 +17,7 @@ const BaseRouter = () => (
         <Route exact path='/signup/' component={Signup} />
         <Route exact path='/profile/' component={Profile} />
         <Route exact path='/booking/' component={Booking} />
+        <Route exact path='/calendar/' component={CalendarDemo} />
     </div>
 );
 

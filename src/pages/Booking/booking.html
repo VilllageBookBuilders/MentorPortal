@@ -101,7 +101,8 @@
             var invalid = [],
                 labels = [];
     
-            mobiscroll.util.getJson('https://trial.mobiscroll.com/getbookings/?year=' + d.getFullYear() + '&month=' + d.getMonth(), (bookings) => {
+            mobiscroll.util.getJson('https://trial.mobiscroll.com/getbookings/?year=' + d.getFullYear() + '&month=' + d.getMonth(), function (bookings) {
+                console.log(bookings)
                 for (var i = 0; i < bookings.length; ++i) {
                     var booking = bookings[i],
                         d = new Date(booking.d);
