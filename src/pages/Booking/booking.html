@@ -4,11 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-    <script>
-        // Ignore this in your implementation
-        window.isMbscDemo = true;
-    </script>
-
     <title>Appointment booking</title>
 
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -64,12 +59,6 @@
 </script>
 
 <script type="text/babel">
-
-    mobiscroll.settings = {
-        lang: 'en',
-        theme: 'ios',
-        themeVariant: 'light'
-    };
     
     const now = new Date();
     const currYear = now.getFullYear();
@@ -108,30 +97,6 @@
             });
         }
         
-        getPrices = (d, callback) => {
-            var invalid = [],
-                labels = [];
-    
-            mobiscroll.util.getJson('https://trial.mobiscroll.com/getprices/?year=' + d.getFullYear() + '&month=' + d.getMonth(), (bookings) => {
-                for (var i = 0; i < bookings.length; ++i) {
-                    var booking = bookings[i],
-                        d = new Date(booking.d);
-    
-                    if (booking.price > 0) {
-                        labels.push({
-                            d: d,
-                            text: '$' + booking.price,
-                            background: 'none',
-                            color: '#e1528f'
-                        });
-                    } else {
-                        invalid.push(d);
-                    }
-                }
-                callback({ labels: labels, invalid: invalid });
-            }, 'jsonp');
-        }
-        
         getBookings = (d, callback) => {
             var invalid = [],
                 labels = [];
@@ -144,9 +109,9 @@
                     if (booking.nr > 0) {
                         labels.push({
                             d: d,
-                            text: booking.nr + ' SPOTS',
-                            background: 'none',
-                            color: '#e1528f'
+                            text: ' ',
+                            background: '#ebeced',
+                            color: 'none'
                         });
                     } else {
                         invalid.push(d);
@@ -182,7 +147,7 @@
                             invalid = invalid.concat('w' + [i]);
                         } else {
                             // add the number of selectable times to labels
-                            labels = labels.concat({ d: 'w' + i, text: time.length + ' SPOTS', background: 'none', color: '#e1528f' });
+                            labels = labels.concat({ d: 'w' + i, text: ' ', background: '#ebeced', color: 'none' });
                         }
                     }
                     
@@ -198,7 +163,7 @@
         }
         
          onDayChange = (event, inst) => {
-             this.setState({ colors:  [{ d: 'w' + event.date.getDay(), background: '#e1528f' }] });
+             this.setState({ colors:  [{ d: 'w' + event.date.getDay(), background: '#007bff' }] });
         }
     
         render() {
