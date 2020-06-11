@@ -11,7 +11,7 @@ class ArticleDetail extends React.Component {
     }
 
     componentWillReceiveProps (newProps) {
-        console.log(newProps)
+        console.log(newProps);
         if(newProps.token) {
             axios.defaults.headers = {
                 "Content-Type": "application/json",
