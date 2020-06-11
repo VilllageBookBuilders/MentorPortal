@@ -1,5 +1,6 @@
-import React from "react"
-import mobiscroll from "./js/mobiscroll.react.min.js"
+import React from "react";
+import mobiscroll from "./js/mobiscroll.react.min.js";
+// import './BookingComponent.css'
 
 const now = new Date();
 const currYear = now.getFullYear();
@@ -110,7 +111,7 @@ class CalendarDemo extends React.Component {
     }
 
     render() {
-        return (
+        return (          
             <mobiscroll.Form className="dms-calendar-booking">
                 <mobiscroll.FormGroup>
                     <mobiscroll.FormGroupTitle>Schedule your weekly Mentoring Session below!</mobiscroll.FormGroupTitle>
