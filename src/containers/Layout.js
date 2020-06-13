@@ -17,7 +17,7 @@ const Layout = (props) => {
                 {props.children}
             </div>
 
-            <footer style={{textAlign: 'center'}}>Village Book Builders 2020</footer>
+            <footer style={{textAlign: 'center'}}>&copy; Village Book Builders 2020  |  All Rights Reserved</footer>
         </body>
     );
 }
