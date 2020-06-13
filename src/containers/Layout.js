@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
 import '../Style.css'
-import logo from "./vbb-logo.png"
+import logo from "../vbb-logo.png"
 
 const Layout = (props) => {
     return(
