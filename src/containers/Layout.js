@@ -1,43 +1,28 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
+import '../Style.css'
+import logo from '../vbb-logo.png'
 
-const { Header, Content, Footer } = Layout;
-
-const CustomLayout = (props) => {
+const Layout = (props) => {
     return(
-        <Layout className="layout">
-            <Header>
-            <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                {
-                    props.isAuthenticated ?
-                    <Menu.Item key="2" onClick={ props.logout }>
-                        Logout
-                    </Menu.Item>
-                    :
-                    <Menu.Item key="2">
-                        <Link to="/login">Login</Link>
-                    </Menu.Item>
-                }
-                <Menu.Item key="1">
-                    <Link to="/">Posts</Link>
-                </Menu.Item>
-            </Menu>
-            </Header>
-            <Content style={{ padding: '0 50px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item><Link to ='/'>Home</Link></Breadcrumb.Item>
-                <Breadcrumb.Item><Link to='/'>List</Link></Breadcrumb.Item>
-            </Breadcrumb>
-                <div className="site-layout-content">
-                    {props.children}
-                </div>
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-        </Layout>
+        <body style={{backgroundColor: "#fffff6", padding: "50px"}}>
+            <header>
+                <img src={logo} alt='Logo' style={{width: "300px"}} />
+                {/* <button type="button" style={{textAlign: 'center'}}>Click Me!</button> */}
+                <br />
+                <br />
+                <hr style={{ border: "2px solid #FF914D" }} />
+                <br />
+            </header>
+
+            <div className="site-layout-content">
+                {props.children}
+            </div>
+
+            <footer style={{textAlign: 'center'}}>&copy; Village Book Builders  |  All Rights Reserved</footer>
+        </body>
     );
 }
 
@@ -47,4 +32,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(CustomLayout));
+export default withRouter(connect(null, mapDispatchToProps)(Layout));
