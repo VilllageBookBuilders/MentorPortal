@@ -4,7 +4,6 @@ import "../Style.css";
 const ProfilePage = () => {
   return (
     <div>
-      <br />
       <h1>Welcome to Mentor Portal!</h1>
       <br />
       <h2 style={{ color: "#4C4C49" }}>My Weekly Mentoring Session</h2>
