@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 import { Form, Input, Button } from 'antd';
 
 class CustomForm extends React.Component {
@@ -8,6 +9,14 @@ class CustomForm extends React.Component {
         const title = values.title;
         const content = values.content;
         console.log(title,content);
+        const articleID = this.props.match.params.articleID;
+        axios.defaults.headers = {
+            "Content-Type": "application/json",
+            Authorization: this.props.token
+        }
+        axios.delete(`http://127.0.0.1:8000/api/${articleID}/`)
+        this.props.history.push('/');
+        this.forceUpdate();
         switch ( requestType ) {
             case 'post':
                 axios.post('http://127.0.0.1:8000/api/',{
@@ -53,4 +62,10 @@ class CustomForm extends React.Component {
     }
 }
 
-export default CustomForm;
+const mapStateToProps = state => {
+  return {
+    token: state.token
+  }
+}
+
+export default connect(mapStateToProps)(CustomForm);
