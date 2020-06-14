@@ -4,40 +4,30 @@ import {connect} from 'react-redux';
 import { Form, Input, Button } from 'antd';
 
 class CustomForm extends React.Component {
-    onFinish = (values, requestType, articleID) => {
-        console.log(values);
-        const title = values.title;
-        const content = values.content;
-        console.log(title,content);
-        const articleID = this.props.match.params.articleID;
-        axios.defaults.headers = {
-            "Content-Type": "application/json",
-            Authorization: this.props.token
-        }
-        axios.delete(`http://127.0.0.1:8000/api/${articleID}/`)
-        this.props.history.push('/');
-        this.forceUpdate();
-        switch ( requestType ) {
-            case 'post':
-                axios.post('http://127.0.0.1:8000/api/',{
-                    title: title,
-                    content: content
-                })
-                .then(res => console.log(res))
-                .catch(err => console.err(err));
-                break;
-            case 'put':
-                axios.put(`http://127.0.0.1:8000/api/${articleID}/`,{
-                    title: title,
-                    content: content
-                })
-                .then(res => console.log(res))
-                .catch(err => console.err(err));
-                break;
-            default:
-                console.log('unexpected form subbmision');
-        }
-    }
+    onFinish = async(values, requestType, articleID) => {
+      axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+      axios.defaults.xsrfCookieName = "csrftoken";
+      axios.defaults.headers = {
+        "Content-Type": "application/json",
+        Authorization: `Token ${this.props.token}`,
+      };
+      
+      if (requestType === "post") {
+        await axios.post("http://127.0.0.1:8000/api/create/", values)
+          .then(res => {
+            if (res.status === 201) {
+              this.props.history.push(`/`);
+            }
+          })
+      } else if (requestType === "put") {
+        await axios.put(`http://127.0.0.1:8000/api/${articleID}/update/`, values)
+          .then(res => {
+            if (res.status === 200) {
+              this.props.history.push(`/`);
+            }
+          })
+      }
+    };
 
     render() {
         return (

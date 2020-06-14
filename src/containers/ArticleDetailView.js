@@ -2,29 +2,21 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Card, Button } from 'antd';
-
 import CustomForm from '../components/Form';
+
 
 class ArticleDetail extends React.Component {
     state = {
         article: {}
     }
 
-    componentWillReceiveProps (newProps) {
-        console.log(newProps);
-        if(newProps.token) {
-            axios.defaults.headers = {
-                "Content-Type": "application/json",
-                Authorization: newProps.token
-            }
-            const articleID = this.props.match.params.articleID;
-            axios.get(`http://127.0.0.1:8000/api/${articleID}/`)
-                .then(res => {
-                    this.setState({
-                        article: res.data
-                    });
-                })
-        }
+    componentDidMount() {
+        const articleID = this.props.match.params.articleID;
+        axios.get(`http://127.0.0.1:8000/api/${articleID}`).then(res => {
+          this.setState({
+            article: res.data
+          });
+        });
     }
 
     onDelete = (event) => {
@@ -32,15 +24,19 @@ class ArticleDetail extends React.Component {
             const articleID = this.props.match.params.articleID;
             axios.defaults.headers = {
                 "Content-Type": "application/json",
-                Authorization: this.props.token
+                Authorization: `Token ${this.props.token}`
             }
             axios.delete(`http://127.0.0.1:8000/api/${articleID}/`)
-            this.props.history.push('/');
-            this.forceUpdate();
+            .then(res => {
+                if (res.status === 204) {
+                    this.props.history.push('/');
+                    this.forceUpdate();
+                }
+            })
         } else {
             console.log("Null token");
         }
-    }
+    };
 
     render() {
         return (
@@ -49,9 +45,11 @@ class ArticleDetail extends React.Component {
                     <p>{this.state.article.content}</p>
                 </Card>
                 <CustomForm
+                    {...this.props}
+                    token={this.props.token}
                     requestType ="put"
                     articleID = {this.props.match.params.articleID}
-                    btnText="update"
+                    btnText="Update"
                 />
                 <form onSubmit={this.onDelete}>
                     <Button type="danger" htmlType="submit">Delete</Button>
