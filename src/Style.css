@@ -44,7 +44,7 @@ body {
 }
 
 footer {
-    textAlign: 'center';
+    text-align: 'center';
     background-color: #FFFFF6;
     max-width: 850px;
     margin: auto;
