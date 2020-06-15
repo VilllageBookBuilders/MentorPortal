@@ -25,7 +25,7 @@ SECRET_KEY = 'vs47$gusghw$589==)3#tf*ti*z7pwt059s83pqsl3-s3f2^nf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['villagebookbuilders.org', '127.0.0.1']
+ALLOWED_HOSTS = ['villagebookbuilders.org', '127.0.0.1', 'localhost']
 
 
 # Application definition
