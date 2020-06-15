@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Articles from '../components/Article';
-import CustomForm from '../components/Form';
+import Articles from './Article';
+import CustomForm from './Form';
 
 
 class ArticleList extends React.Component {

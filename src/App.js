@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import BaseRouter from './routes';
 import 'antd/dist/antd.css';
 import * as actions from './store/actions/auth';
-import CustomLayout from './containers/Layout';
+import Layout from './pages/Layout';
 
 function App(props) {
   useEffect(() => {
@@ -15,9 +15,9 @@ function App(props) {
     <div className="App">
       <Router>
         <div>
-          <CustomLayout {...props}>
+          <Layout {...props}>
             <BaseRouter />
-          </CustomLayout>
+          </Layout>
         </div>
       </Router>
 
