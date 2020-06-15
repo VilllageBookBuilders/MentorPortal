@@ -1,13 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import ArticleList from "./pages/ArticleListView";
-import ArticleDetail from "./pages/ArticleDetailView";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Profile from "./pages/Profile";
-import BasicBooking from "./pages/BasicBooking";
-import CalendarDemo from "./pages/Booking/BookingComponent.js";
+import ArticleList from "./components/ArticleListView";
+import ArticleDetail from "./components/ArticleDetailView";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Profile from "./components/Profile";
+import BasicBooking from "./components/BasicBooking";
+import CalendarDemo from "./components/Booking/BookingComponent";
 
 const BaseRouter = () => (
   <div>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import BaseRouter from './routes';
 import 'antd/dist/antd.css';
 import * as actions from './store/actions/auth';
-import Layout from './pages/Layout';
+import Layout from './components/Layout';
 
 function App(props) {
   useEffect(() => {
