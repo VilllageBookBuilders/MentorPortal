@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import ArticleList from './containers/ArticleListView';
-import ArticleDetail from './containers/ArticleDetailView';
-import Login from './containers/Login';
-import Signup from './containers/Signup';
+import ArticleList from './pages/ArticleListView';
+import ArticleDetail from './pages/ArticleDetailView';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import BasicBooking from './pages/BasicBooking';
 import CalendarDemo from "./pages/Booking/BookingComponent.js";
