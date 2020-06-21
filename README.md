@@ -2,11 +2,13 @@ This project is broken up into a backend and frontend. The backend contains the 
 
 Run the following commands inside of the repository folder to get started:
 
+```json
 virtualenv env
 pip install -r requirements.txt
 npm i 
 npm run build
 python manage.py runserver
+```
 
 These commands (respectively)
 1. virtualenv env (create a virual environment for all of your python packages)
