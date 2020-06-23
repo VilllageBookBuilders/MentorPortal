@@ -4,6 +4,8 @@ body {
     background-color: #FFFFF6;
     padding-left: 30px;
     padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
     }
     
     h1 {
@@ -30,7 +32,7 @@ body {
 
     hr {
         border: 2px solid #FF914D;
-        margin-right: 50px;
+        /* margin-right: 50px; */
     }
 
     .half-dotted-line {
