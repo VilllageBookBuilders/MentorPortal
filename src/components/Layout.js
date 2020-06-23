@@ -17,7 +17,7 @@ const Layout = (props) => {
                     <a href="/login" style={{ display: "inline-block", paddingLeft: "100px" }}><button>Sign Out</button></a> : <p style={{ display: "inline-block", position: "relative", top:"27px" }}></p>
                 }
                 <br />
-                <hr style={{ border: "2px solid #FF914D" }} />
+                <hr className="nav-bar-line" />
                 <br />
             </div>
 
