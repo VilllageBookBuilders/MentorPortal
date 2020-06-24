@@ -7,9 +7,9 @@ import logo from '../vbb-logo.png'
 
 const Layout = (props) => {
     return(
-        <body>
+        <div className="layout">
             <div>
-                <img src={logo} alt='Logo' style={{width: "300px", padding: "20px" }} />
+                <img src={logo} alt='Logo' style={{ width: "300px", padding: "20px" }} />
                 <h1 style={{ display: "inline-block", paddingLeft: "100px", position: "relative", top:"30px" }}>Mentor Portal</h1>
                 <a href="https://www.villagebookbuilders.org/giftabook/" style={{ display: "inline-block", paddingLeft: "100px", position: "relative", top:"27px" }}><button>Donate</button></a>
                 {
@@ -25,8 +25,8 @@ const Layout = (props) => {
                 {props.children}
             </div>
 
-            <footer style={{textAlign: 'center' }}>&copy; Village Book Builders  |  All Rights Reserved</footer>
-        </body>
+            <footer style={{ textAlign: "center" }}>&copy; Village Book Builders  |  All Rights Reserved</footer>
+        </div>
     );
 }
 
