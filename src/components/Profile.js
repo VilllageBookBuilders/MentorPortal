@@ -7,7 +7,7 @@ const ProfilePage = () => {
       <h2 style={{ color: "#4C4C49" }}>My Weekly Mentoring Session</h2>
       <h3 style={{ color: "#6AC66B", textIndent: "25px" }}>Tuesdays @ 6pm MST</h3>
       <br />
-      <hr className="half-dotted-line"/>
+      <hr />
 
       <h2 style={{ color: "#4C4C49" }}>Mentoring Resources</h2>
       <div style={{ paddingLeft: "50px", fontSize: "18px" }}>
@@ -22,7 +22,7 @@ const ProfilePage = () => {
         </a>
       </div>
       <br />
-      <hr className="half-dotted-line" />
+      <hr />
 
       <h2 style={{ color: "#4C4C49" }}>My Info</h2>
       <h3 style={{ color: "#FF914D" }}>Account-Related</h3>

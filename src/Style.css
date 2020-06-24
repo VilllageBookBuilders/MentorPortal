@@ -4,8 +4,8 @@
     background-color: #FFFFF6;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 5px;
 }
     
 h1 {
@@ -30,14 +30,30 @@ p {
     padding-left: 50px;
 }
 
-hr {
-    border: 2px solid #FF914D;
+.navbar {
+    border-bottom: 4px solid #FF914D;
+    background-color: #FFFFF6;
+    padding-bottom: 15px;
 }
 
-.half-dotted-line {
-    border: 1px dotted #4C4C49;
-    width: 400px;
-    margin-left: 0px;
+.btn {
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.donate-button {
+    background-color: #549BEA;
+
+}
+
+.signin-button {
+    background-color: #6AC66B;
+}
+
+hr {
+    border: 0.5px dotted #4C4C49;
 }
 
 footer {

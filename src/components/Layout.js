@@ -8,18 +8,18 @@ import logo from '../vbb-logo.png'
 const Layout = (props) => {
     return(
         <div className="layout">
-            <div>
-                <img src={logo} alt='Logo' style={{ width: "300px", padding: "20px" }} />
-                <h1 style={{ display: "inline-block", paddingLeft: "100px", position: "relative", top:"30px" }}>Mentor Portal</h1>
-                <a href="https://www.villagebookbuilders.org/giftabook/" style={{ display: "inline-block", paddingLeft: "100px", position: "relative", top:"27px" }}><button>Donate</button></a>
+            <nav className="navbar" class="navbar sticky-top navbar-dark">
+                <img src={logo} alt='Logo' style={{ width: "250px" }} />
+                <h1 style={{ position: "relative", top: "27px" }}>Mentor Portal</h1>
+                <a class="btn btn-light donate-button" type="button" href="https://www.villagebookbuilders.org/giftabook/" style={{ position: "relative", top: "15px" }}>DONATE</a>
+                <a class="btn btn-light signin-button" type="button" href="/login" style={{ position: "relative", top: "15px" }}>SIGN IN</a>
+                {/* For Later - Only Show Sign In Button When User Is Logged Out
                 {
                     props.isAuthenticated ?
-                    <a href="/login" style={{ display: "inline-block", paddingLeft: "100px" }}><button>Sign Out</button></a> : <p style={{ display: "inline-block", position: "relative", top:"27px" }}></p>
-                }
-                <br />
-                <hr className="nav-bar-line" />
-                <br />
-            </div>
+                    {{! insert sign-in button line from above }} : <p></p>
+                } */}
+            </nav>
+            <br />
 
             <div className="site-layout-content">
                 {props.children}
