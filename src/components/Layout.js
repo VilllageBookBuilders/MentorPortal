@@ -7,7 +7,7 @@ import logo from '../vbb-logo.png'
 
 const Layout = (props) => {
     return(
-        <body style={{backgroundColor: "#fffff6" }}>
+        <body>
             <div>
                 <img src={logo} alt='Logo' style={{width: "300px", padding: "20px" }} />
                 <h1 style={{ display: "inline-block", paddingLeft: "100px", position: "relative", top:"30px" }}>Mentor Portal</h1>
