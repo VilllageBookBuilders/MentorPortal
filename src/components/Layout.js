@@ -10,7 +10,7 @@ const Layout = (props) => {
         <div className="layout">
             <nav className="navbar" class="navbar sticky-top navbar-dark">
                 <img src={logo} alt='Logo' style={{ width: "250px" }} />
-                <h1 style={{ position: "relative", top: "27px" }}>Mentor Portal</h1>
+                <a href='/'><h1 style={{ position: "relative", top: "27px" }}>Mentor Portal</h1></a>
                 <a class="btn btn-light donate-button" type="button" href="https://www.villagebookbuilders.org/giftabook/" style={{ position: "relative", top: "15px" }}>DONATE</a>
                 <a class="btn btn-light signin-button" type="button" href="/login" style={{ position: "relative", top: "15px" }}>SIGN IN</a>
                 {/* For Later - Only Show Sign In Button When User Is Logged Out
