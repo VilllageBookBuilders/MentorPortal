@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login'
 import hope_books from '../hope_books.png'
 
 
-export class LoginGoogle extends Component {
+export class SigninGoogle extends Component {
 
   responseGoogle = (response) => {
     console.log(response);
@@ -38,4 +38,4 @@ export class LoginGoogle extends Component {
   }
 }
 
-export default LoginGoogle
+export default SigninGoogle
