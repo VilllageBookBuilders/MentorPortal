@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import BasicBooking from "./components/BasicBooking";
 import CalendarDemo from "./components/Booking/BookingComponent";
+import { SigninGoogle } from "./components/SigninGoogle";
 
 const BaseRouter = () => (
   <div>
@@ -19,6 +20,7 @@ const BaseRouter = () => (
     <Route exact path="/profile/" component={Profile} />
     <Route exact path="/booking/" component={BasicBooking} />
     <Route exact path="/calendar/" component={CalendarDemo} />
+    <Route exact path="/signin/" component={SigninGoogle} />
   </div>
 );
 

@@ -7,7 +7,19 @@
     padding-bottom: 10px;
     padding-top: 5px;
 }
+
+.site-layout-content {
+    min-height: calc(100vh - 200px);
+}
+
+.SigninBox h3, .SigninBox p {
+    font-size: calc(1.5vw + 60%);
+}
     
+.SigninBox h6 {
+    font-size: calc(1vw + 60%);
+}
+
 h1 {
     font-family: 'Caveat', cursive;
     font-weight: bold;
@@ -21,12 +33,15 @@ h2 {
 
 h3 {
     font-size: 18px;
-    padding-left: 25px;
+    /* padding-left: 25px; */
+    font-size: calc(1.5vw + 60%);
+
 }
 
 p {
     font-family: 'Nunito' , sans-serif;
     font-size: 18px;
+    /* font-size: calc(1.5vw + 60%); */
     padding-left: 50px;
 }
 
@@ -58,4 +73,7 @@ hr {
 
 footer {
     font-family: 'Nunito';
+    position: "absolute";
+    bottom: 0;
+    height: "2.5rem";
 }
