@@ -87,7 +87,7 @@ const RegistrationForm = (props) => {
         <Input placeholder="Email" />
       </Form.Item>
 
-      <a href="Signup4.js">Here</a>
+      
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
