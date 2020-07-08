@@ -35,7 +35,7 @@ class MasterForm extends React.Component{
 
     _next = () => {
         let currentStep = this.state.currentStep
-        currentStep = currentStep >= 2? 3: currentStep +1
+        currentStep = currentStep >= 3? 4: currentStep +1
         this.setState({
             currentStep: currentStep
         })
@@ -69,7 +69,7 @@ class MasterForm extends React.Component{
 
     nextButton(){
         let currentStep = this.state.currentStep;
-        if(currentStep <3) {
+        if(currentStep <4) {
             return(
                 <button
                     className="btn btn-primary float-right"
@@ -103,6 +103,12 @@ class MasterForm extends React.Component{
                 />
 
                 <Step3 
+                    currentStep={this.state.currentStep}
+                    handleChange={this.handleChange}
+                    password={this.state.password}
+                />
+
+                <Step4 
                     currentStep={this.state.currentStep}
                     handleChange={this.handleChange}
                     password={this.state.password}
@@ -457,6 +463,42 @@ function Step2(props) {
                 value={props.username}
                 onChange={props.handleChange}
                 />
+
+      <Form.Item
+        name=""
+        label="Have you ever been arrested, charged, 
+        or convected of child abuse or molestation of any form?"
+        rules={[
+          {
+            type: 'string',
+            message: '',
+          },
+          {
+            required: true,
+            message: 'Please answer',
+          },
+        ]}
+      >
+        <Input placeholder="Yes, No" />
+      </Form.Item>
+
+      <Form.Item
+        name=""
+        label="Can you commit to being a mentor for a min of 4 months?"
+        rules={[
+          {
+            type: 'string',
+            message: 'Please yes or no',
+          },
+          {
+            required: true,
+            message: 'Please enter your availability',
+          },
+        ]}
+      >
+        <Input placeholder="Yes, No" />
+      </Form.Item>
+
         </div>
     );
 }
@@ -468,22 +510,116 @@ function Step3(props) {
         return null
     }
     return(
-        <React.Fragment>
+        
             <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input
-                className="form-control"
-                id="password"
-                name="password"
-                type="text"
-                placeholder="Enter password"
-                value={props.password}
-                onChange={props.handleChange}
-                />
+            <div>
+          <h1>Here is how you can 
+            support your mentee. Your donation covers more than you think.</h1>
+            <p>A monthly donation of $5 will allow your mentee to have regular
+               access to a computer, headphones, WIFI connection, a safe
+                learning environment, and Khan Academy's award-winning
+                 educational programs.  
+            </p>
         </div>
-        <button className="btn btn-success btn-block">Sign up</button>
-        </React.Fragment>
+      
+      <Form.Item
+        name=""
+        label="Donation"
+        rules={[
+          {
+            type: 'string',
+            message: '',
+          },
+          {
+            required: false,
+            message: '',
+          },
+        ]}
+      >
+        <Input placeholder="$5" />
+      </Form.Item>
+
+      <Form.Item
+        name=""
+        label="Stripe Credit Card"
+        rules={[
+          {
+            type: 'string',
+            message: '',
+          },
+          {
+            required: false,
+            message: 'Please enter your credit card number',
+          },
+        ]}
+      >
+        <Input placeholder="XXXX-XXXX-XXXX-XXXX" />
+      </Form.Item>
+
+      <Form.Item
+        name=""
+        label="Name on Card"
+        rules={[
+          {
+            type: 'string',
+            message: '',
+          },
+          {
+            required: false,
+            message: 'Please enter Card Name',
+          },
+        ]}
+      >
+        <Input placeholder="Visa, MasterCard" />
+      </Form.Item>
+        </div>
+        
     );
+}
+
+function Step4(props) {
+  if (props.currentStep !== 4) {
+    return null
+  } 
+  return(
+    <React.Fragment>
+    <div className="form-group">
+      <div>
+          <h1>One last thing, how you can get more involved</h1>
+          <p>Our organization is built by voluneteers like you,
+            we need your help to help spread hope through books</p>
+
+      </div>
+
+      <select name="stage" id="stage">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+      </select>
+
+      <input type="checkbox" id="checkbox" name="fundraiser" value="fundraiser"></input>
+      <label for="vehicle1"> Run or help with a fundraiser</label><br></br>
+
+      <input type="checkbox" id="checkbox" name="smedia" value="social media"></input>
+      <label for="vehicle1"> Be a social media advocate or an ambassador</label><br></br>
+
+      <input type="checkbox" id="checkbox" name="vbbmentor" value="vbb mentor chapter"></input>
+      <label for="vehicle1"> Start/Join a VBB Village Mentors Chapter at your school
+      or company (A club of fellow mentors)</label><br></br>
+
+      <input type="checkbox" id="checkbox" name="bclub" value="book club"></input>
+      <label for="vehicle1"> Start/Join a Book Club</label><br></br>
+
+      <input type="checkbox" id="checkbox" name="research" value="research"></input>
+      <label for="vehicle1"> Research</label><br></br>
+
+      <input type="checkbox" id="checkbox" name="other" value="other"></input>
+      <label for="vehicle1"> Other</label><br></br>
+
+    </div>
+    <button className="btn btn-success btn-block">Sign up</button>
+    </React.Fragment>
+  );
 }
 ReactDOM.render(<MasterForm />, document.getElementById('root'))
 export default MasterForm;
