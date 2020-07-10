@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GoogleLogin from 'react-google-login'
-import hope_books from '../hope_books.png'
+//import hope_books from '../hope_books.png'
+import hope_books from '../updated_hope_books.png'
 
 
 export class SigninGoogle extends Component {
@@ -14,9 +15,9 @@ export class SigninGoogle extends Component {
     return (
       <div style={{textAlign: "center"}}>
         <br/>
-        <img src={hope_books} alt='Pic' style={{ width: "30%", float: "right", marginRight: "50px" }} />
+        <img src={hope_books} alt='Pic' style={{ width: "40%", float: "right", marginRight: "50px" }} />
 
-        <div className="SigninBox" style={{ minWidth: "70%" }}>
+        <div className="SigninBox" style={{ minWidth: "70%", paddingTop: "30px" }}>
           <h3>Please use your villagementors.org account<br/>to sign in below:</h3>
           <br/>
           <GoogleLogin
