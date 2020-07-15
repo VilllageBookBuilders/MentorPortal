@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('rest-auth/google/', include('socialauth.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('articles.api.urls')),
     re_path(r'.*', TemplateView.as_view(template_name="index.html"))
