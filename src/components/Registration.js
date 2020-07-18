@@ -14,6 +14,7 @@ class MasterForm extends React.Component{
             email: '',
             username: '',
             password: '',
+            stage: '',
         }
     }
 
@@ -26,11 +27,12 @@ class MasterForm extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault()
-        const {email, username, password} = this.state
+        const {email, username, password, stage} = this.state
         alert(`Your registration detail: \n 
            Email: ${email} \n 
            Username: ${username} \n
-           Password: ${password}`)
+           Stage: ${stage} \n
+           Password: ${password}`) 
     }
 
     _next = () => {
@@ -85,7 +87,7 @@ class MasterForm extends React.Component{
     render() {
         return(
             <React.Fragment>
-            <h1>Varun's SUPER Wizard Form</h1>
+            <h1>Mentor Registration</h1>
             <p>Step {this.state.currentStep} </p>
 
             <form onSubmit={this.handleSubmit}>
@@ -592,11 +594,17 @@ function Step4(props) {
 
       </div>
 
+      <div>
       <select name="stage" id="stage">
+        <label>Would you like to get more involved?</label>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
       </select>
+      </div>
 
+      <div>
+        <p>How would you like to get more involved (Select all that apply)?
+        </p>
       <input type="checkbox" id="checkbox" name="fundraiser" value="fundraiser"></input>
       <label for="vehicle1"> Run or help with a fundraiser</label><br></br>
 
@@ -617,6 +625,27 @@ function Step4(props) {
       <label for="vehicle1"> Other</label><br></br>
 
     </div>
+
+    <div>
+    <Form.Item
+        name=""
+        label="What city and state/province do you live in?"
+        rules={[
+          {
+            type: 'string',
+            message: 'Please enter city and state/province',
+          },
+          {
+            required: true,
+            message: 'Please enter your availability',
+          },
+        ]}
+      >
+        <Input placeholder="Philadelphia, PA" />
+      </Form.Item>
+    </div>
+
+</div>
     <button className="btn btn-success btn-block">Sign up</button>
     </React.Fragment>
   );
