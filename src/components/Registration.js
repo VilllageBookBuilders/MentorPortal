@@ -228,9 +228,6 @@ function Step1(props) {
                   <option value="HS_Student">High School Student</option>
                   <option value="Other">Other</option>
         </select>
-      <div>
-        Here's the lifeStage thing: {props.state.lifeStage}
-      </div>
       </div>
       
      { 
