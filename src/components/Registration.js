@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState, Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
     Form,
     Input,
-  } from 'antd';
+  } 
+from 'antd';
+
 
 
 class MasterForm extends React.Component{
     constructor(props) {
-        super(props)
+        super(props);
+        // this.handleMultiChange = this.handleMultiChange.bind(this);
         this.state = {
             currentStep: 1,
             email: '',
             username: '',
             password: '',
             stage: '',
+            lifeStage: '',
+            isLoggedIn: false,
         }
+        
     }
+
+   
+
 
     handleChange = event => {
         const {name, value} = event.target
@@ -27,7 +36,7 @@ class MasterForm extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault()
-        const {email, username, password, stage} = this.state
+        const {email, username, password, stage,} = this.state
         alert(`Your registration detail: \n 
            Email: ${email} \n 
            Username: ${username} \n
@@ -83,9 +92,9 @@ class MasterForm extends React.Component{
         return null;
     }
 
-
     render() {
-        return(
+        return (
+
             <React.Fragment>
             <h1>Mentor Registration</h1>
             <p>Step {this.state.currentStep} </p>
@@ -96,6 +105,7 @@ class MasterForm extends React.Component{
                     currentStep={this.state.currentStep}
                     handleChange={this.handleChange}
                     email={this.state.email}
+                    handleMultiChange={this.handleMultiChange}
                 />
 
                 <Step2 
@@ -118,17 +128,54 @@ class MasterForm extends React.Component{
                 {this.previousButton()}
                 {this.nextButton()}
 
-            </form>    
+                
 
+            </form>    
+            
             </React.Fragment>
         );
     }
+    
+    // App() {
+      
+    //   const [name, setName] = useState('')
+    //   const [Homemaker, setHomemaker] = useState('')
+    //   const [password, setPassword] = useState('')
 
+    //   let message = ''
+    //   if(Homemaker === 'Homemaker') {
+    //     message = 'Hello admin'
+    //   } else {
+    //     message = 'Get lost'
+    //   }
+
+    //   return (
+    //     <div>
+    //       <span>{message}</span>
+    //       <option value={Homemaker}>Homemaker</option>
+    //       <input type="text" value={name} />
+    //       <input type="password" value={password}/>
+          
+    //     </div>
+    //   )
+    // }
+   
 
 }
+
+
+function handleMultiChange(value, lifeStage) {
+  if (lifeStage == "lifeStage") {
+    lifeStage = value;
+  }
+  return lifeStage;
+}
+
 /*Step 1*/
+var lifeStage = '';
 
 function Step1(props) {
+   
     if (props.currentStep !==1) {
         return null
     }
@@ -152,14 +199,43 @@ function Step1(props) {
         />
       </Form.Item> 
 
-      <p>Which of the following best describes you?</p>
-      <select name="stage" id="stage">
-                <option value="Working Professional">Working Professional</option>
-                <option value="Homemaker">Homemaker</option>
-                <option value="Retired">Retired</option>
-                <option value="College Student">College Student</option>
-                <option value="High School Student">High School Student</option>
-      </select>
+      <div>    
+        <p>Are you 18 years or older?</p>
+        <select name="stage" id="stage">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+        </select>
+      </div>
+
+    
+      <div>    
+        <p>Which of the following best describes you?</p>
+        <select name="describes" id="describes">
+        {console.log(lifeStage)}  
+          
+                  <option value="Homemaker">Homemaker</option>
+                  <option value="Retired" onClick={() => lifeStage = handleMultiChange("Retired", lifeStage)} >Retired</option>
+                  <option value="Working Professional">Working Professional</option>
+                  {/* <option value="Homemaker" onChange={this.App()}>Homemaker</option> */}
+                  
+                  <option value="College_Student">College Student</option>
+                  <option value="HS_Student">High School Student</option>
+                  <option value="Other">Other</option>
+        </select>
+      
+      </div>
+      
+     { 
+       lifeStage == "Retired" && (
+      
+      <div>
+        <p>IT WORKED</p>
+       {console.log("I'm here")}
+      </div>)
+      }
+      
+      
+
             
       <Form.Item
         name=""
