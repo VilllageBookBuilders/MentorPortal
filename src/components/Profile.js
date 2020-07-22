@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style.css";
-import sessionExample from '../mentoringSessionEx.png';
+import sessionExample from '../mentoringSessionEx.PNG';
 
 
 const ProfilePage = () => {
@@ -9,7 +9,7 @@ const ProfilePage = () => {
       <div class="twoColumn" >
         <h2 style={{ color: "#4C4C49" }}>My Weekly Mentoring Session</h2>
         <h3 style={{ color: "#6AC66B", textIndent: "25px" }}>Tuesdays @ 6pm MST</h3>
-        <img src={sessionExample} alt='mentoringEventExample' style={{ width: "250px" }} /> 
+        <img src={sessionExample} alt='mentoringEventExample' /> 
         <br />
         <hr />
       </div>
