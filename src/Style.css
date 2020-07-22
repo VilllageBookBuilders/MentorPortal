@@ -10,6 +10,7 @@
 
 .site-layout-content {
     min-height: calc(100vh - 200px);
+    margin-left: 200px;
 }
 
 .SigninBox h3, .SigninBox p {
