@@ -106,6 +106,8 @@ class MasterForm extends React.Component{
                     handleChange={this.handleChange}
                     email={this.state.email}
                     handleMultiChange={this.handleMultiChange}
+                    setState={this.setState}
+                    state={this.state}
                 />
 
                 <Step2 
@@ -179,6 +181,10 @@ function Step1(props) {
     if (props.currentStep !==1) {
         return null
     }
+    let change = function(event) {
+      console.log("CHANGE BEING CALLED!!!")
+      console.log(event.target.value)
+    }
     return(
         <div className="form-group">
             <Form.Item
@@ -210,11 +216,11 @@ function Step1(props) {
     
       <div>    
         <p>Which of the following best describes you?</p>
-        <select name="describes" id="describes">
+        <select name="describes" id="describes" onChange={change}>
         {console.log(lifeStage)}  
           
                   <option value="Homemaker">Homemaker</option>
-                  <option value="Retired" onClick={() => lifeStage = handleMultiChange("Retired", lifeStage)} >Retired</option>
+                  <option value="Retired">Retired</option>
                   <option value="Working Professional">Working Professional</option>
                   {/* <option value="Homemaker" onChange={this.App()}>Homemaker</option> */}
                   
@@ -222,7 +228,9 @@ function Step1(props) {
                   <option value="HS_Student">High School Student</option>
                   <option value="Other">Other</option>
         </select>
-      
+      <div>
+        Here's the lifeStage thing: {props.state.lifeStage}
+      </div>
       </div>
       
      { 
