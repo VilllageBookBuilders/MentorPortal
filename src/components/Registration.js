@@ -106,6 +106,8 @@ class MasterForm extends React.Component{
                     handleChange={this.handleChange}
                     email={this.state.email}
                     handleMultiChange={this.handleMultiChange}
+                    setState={this.setState}
+                    lifeStage={this.lifeStage}
                 />
 
                 <Step2 
@@ -214,7 +216,7 @@ function Step1(props) {
         {console.log(lifeStage)}  
           
                   <option value="Homemaker">Homemaker</option>
-                  <option value="Retired" onClick={() => lifeStage = handleMultiChange("Retired", lifeStage)} >Retired</option>
+                  <option value="Retired" onClick={()=> props.setState({lifeStage: "Retired"})} >Retired</option>
                   <option value="Working Professional">Working Professional</option>
                   {/* <option value="Homemaker" onChange={this.App()}>Homemaker</option> */}
                   
@@ -222,16 +224,19 @@ function Step1(props) {
                   <option value="HS_Student">High School Student</option>
                   <option value="Other">Other</option>
         </select>
-      
+      <div>
+        <p>It works2</p>{props.lifeStage}
+      </div>
+
       </div>
       
      { 
-       lifeStage == "Retired" && (
+       props.lifeStage == "Retired" && 
       
       <div>
         <p>IT WORKED</p>
        {console.log("I'm here")}
-      </div>)
+      </div>
       }
       
       
