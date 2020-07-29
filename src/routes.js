@@ -6,8 +6,7 @@ import ArticleDetail from "./components/ArticleDetailView";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-import BasicBooking from "./components/BasicBooking";
-import CalendarDemo from "./components/Booking/BookingComponent";
+import Booking from "./components/Booking";
 import { SigninGoogle } from "./components/SigninGoogle";
 
 const BaseRouter = () => (
@@ -18,8 +17,7 @@ const BaseRouter = () => (
     <Route exact path="/login/" component={Login} />
     <Route exact path="/signup/" component={Signup} />
     <Route exact path="/profile/" component={Profile} />
-    <Route exact path="/booking/" component={BasicBooking} />
-    <Route exact path="/calendar/" component={CalendarDemo} />
+    <Route exact path="/booking/" component={Booking} />
     <Route exact path="/signin/" component={SigninGoogle} />
   </div>
 );
