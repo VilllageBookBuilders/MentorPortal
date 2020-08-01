@@ -932,8 +932,8 @@ function Step5(props) {
         <div>
           <select name="howInvolved" id="howInvolved" value={props.howInvolved}
             onChange={props.handleChange}>
-            <h1>How would you like to get more
-           involved (Select all that apply)?</h1>
+            <label>How would you like to get more
+           involved (Select all that apply)?</label>
 
           <input type="checkbox" id="checkbox" name="howInvolved" value="fundraiser"></input>
           <label for="howInvolved"> Run or help with a fundraiser</label>
