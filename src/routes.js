@@ -10,10 +10,13 @@ import Profile from "./components/Profile";
 import BasicBooking from "./components/BasicBooking";
 import CalendarDemo from "./components/Booking/BookingComponent";
 import MasterForm from "./components/Registration";
+import Booking from "./components/Booking";
+import { SigninGoogle } from "./components/SigninGoogle";
 
 const BaseRouter = () => (
   <div>
-    <Route exact path="/" component={ArticleList} />
+    <Route exact path="/" component={Profile} />
+    <Route exact path="/articlelist" component={ArticleList} />
     <Route exact path="/articles/:articleID/" component={ArticleDetail} />
     <Route exact path="/login/" component={Login} />
     <Route exact path="/signup/" component={Signup} />
@@ -22,6 +25,8 @@ const BaseRouter = () => (
     <Route exact path="/booking/" component={BasicBooking} />
     <Route exact path="/calendar/" component={CalendarDemo} />
     <Route exact path="/registration/" component={MasterForm} />
+    <Route exact path="/booking/" component={Booking} />
+    <Route exact path="/signin/" component={SigninGoogle} />
   </div>
 );
 
